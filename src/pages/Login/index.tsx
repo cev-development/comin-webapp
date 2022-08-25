@@ -23,9 +23,9 @@ const Login: React.FC = () => {
       <Content>
         <Title>LOGIN</Title>
         <Form>
-          <Label htmlFor="labelForEmail">Usuário:</Label>
+          <Label htmlFor="labelForEmail">Usuario: </Label>
           <Input id="labelForEmail" onChange={e => setEmail(e.target.value)} />
-          <Label htmlFor="labelForPassword">Senha:</Label>
+          <Label htmlFor="labelForPassword">Senha: </Label>
           <Input
             id="labelForPassword"
             type="password"
