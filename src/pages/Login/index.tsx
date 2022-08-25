@@ -23,7 +23,7 @@ const Login: React.FC = () => {
       <Content>
         <Title>LOGIN</Title>
         <Form>
-          <Label htmlFor="labelForEmail">Email:</Label>
+          <Label htmlFor="labelForEmail">Usuário:</Label>
           <Input id="labelForEmail" onChange={e => setEmail(e.target.value)} />
           <Label htmlFor="labelForPassword">Senha:</Label>
           <Input

@@ -8,7 +8,7 @@ interface ILogin {
 class SessionService {
   async auth({ email, password }: ILogin): Promise<any> {
     const response = await api.post(`/session`, {
-      email,
+      username: email,
       password,
     });
 
