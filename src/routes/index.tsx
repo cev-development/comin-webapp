@@ -1,12 +1,12 @@
-import React from "react";
-import { Switch } from "react-router-dom";
-import Clientes from "../pages/Clientes";
-import Localizacao from "../pages/Localizacao";
-import Login from "../pages/Login";
-import Mover from "../pages/Mover";
-import NotFound from "../pages/NotFound";
-import Route from "./route";
-import Registration from "../pages/Registration";
+import React from 'react';
+import { Switch } from 'react-router-dom';
+import Clientes from '../pages/Clientes';
+import Localizacao from '../pages/Localizacao';
+import Login from '../pages/Login';
+import Mover from '../pages/Mover';
+import NotFound from '../pages/NotFound';
+import Route from './route';
+import Registration from '../pages/Registration';
 
 const Routes: React.FC = () => (
   <Switch>

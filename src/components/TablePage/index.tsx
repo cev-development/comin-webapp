@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-props-no-spreading */
-import { Table, TableProps } from "antd";
-import { Container } from "./styles";
-import "antd/dist/antd.css";
+import { Table, TableProps } from 'antd';
+import { Container } from './styles';
+import 'antd/dist/antd.css';
 
 type IProps = TableProps<any>;
 

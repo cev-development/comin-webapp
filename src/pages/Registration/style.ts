@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const Container = styled.div`
   width: 100%;
@@ -64,11 +64,11 @@ export const Main = styled.main`
   margin-top: 10px;
 `;
 
-export const ErroAlert = styled("p")<{ erro: boolean }>`
+export const ErroAlert = styled('p')<{ erro: boolean }>`
   margin-top: 4px;
   color: #df0a24;
   font-size: 10px;
   min-height: 16px;
 
-  ${(props) => !props.erro && `display: none`}
+  ${props => !props.erro && `display: none`}
 `;

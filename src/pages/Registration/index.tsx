@@ -1,6 +1,6 @@
-import { useState } from "react";
-import { Header, Input } from "../../components";
-import { generateRequiredInputValues } from "../../utils";
+import { useState } from 'react';
+import { Header, Input } from '../../components';
+import { generateRequiredInputValues } from '../../utils';
 import {
   Button,
   Container,
@@ -9,7 +9,7 @@ import {
   Label,
   Main,
   Title,
-} from "./style";
+} from './style';
 
 interface IPropsInput {
   isValid: boolean;
@@ -24,21 +24,21 @@ type typeInput = {
 
 const Registration: React.FC = () => {
   const stateSchema = {
-    ...generateRequiredInputValues(["name", "guardian", "contact", "age"]),
+    ...generateRequiredInputValues(['name', 'guardian', 'contact', 'age']),
   };
 
   const [inputValue, setInputValue] = useState<typeInput>(stateSchema);
 
   const handleInput = async (value: string, inputName: string) => {
-    let error = "";
+    let error = '';
     let isValid = true;
 
     if (inputValue[inputName].required && value.length === 0) {
-      error = "campo obrigatorio";
+      error = 'campo obrigatorio';
       isValid = false;
     }
 
-    setInputValue((prevState) => ({
+    setInputValue(prevState => ({
       ...prevState,
       [inputName]: {
         isValid,
@@ -58,32 +58,32 @@ const Registration: React.FC = () => {
           <Label htmlFor="nome">Nome:</Label>
           <Input
             id="nome"
-            onChange={(e) => handleInput(e.target.value, "name")}
-          ></Input>
+            onChange={e => handleInput(e.target.value, 'name')}
+          />
           <ErroAlert erro={!!inputValue.name.error}>
             {inputValue.name.error}
           </ErroAlert>
           <Label htmlFor="idade">Idade:</Label>
           <Input
             id="idade"
-            onChange={(e) => handleInput(e.target.value, "age")}
-          ></Input>
+            onChange={e => handleInput(e.target.value, 'age')}
+          />
           <ErroAlert erro={!!inputValue.age.error}>
             {inputValue.age.error}
           </ErroAlert>
           <Label htmlFor="responsavel">Responsável:</Label>
           <Input
             id="responsavel"
-            onChange={(e) => handleInput(e.target.value, "guardian")}
-          ></Input>
+            onChange={e => handleInput(e.target.value, 'guardian')}
+          />
           <ErroAlert erro={!!inputValue.guardian.error}>
             {inputValue.guardian.error}
           </ErroAlert>
           <Label htmlFor="contato">Contato:</Label>
           <Input
             id="contato"
-            onChange={(e) => handleInput(e.target.value, "contact")}
-          ></Input>
+            onChange={e => handleInput(e.target.value, 'contact')}
+          />
           <ErroAlert erro={!!inputValue.contact.error}>
             {inputValue.contact.error}
           </ErroAlert>

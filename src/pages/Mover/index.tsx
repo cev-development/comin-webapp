@@ -1,7 +1,7 @@
-import { Select } from "antd";
-import { useEffect, useState } from "react";
-import { Header, Loading } from "../../components";
-import authService from "../../service/authService";
+import { Select } from 'antd';
+import { useEffect, useState } from 'react';
+import { Header, Loading } from '../../components';
+import authService from '../../service/authService';
 import {
   Button,
   Container,
@@ -9,13 +9,13 @@ import {
   ContentForm,
   Subtitle,
   Title,
-} from "./style";
+} from './style';
 
 const Mover: React.FC = () => {
   const [dataSource, setDataSource] = useState<any>([]);
   const [select, setSelect] = useState<any>([]);
   const [loading, setLoading] = useState(true);
-  const [para, setPara] = useState("");
+  const [para, setPara] = useState('');
   const { Option } = Select;
 
   const handleChange = (value: number[]) => {
@@ -33,7 +33,7 @@ const Mover: React.FC = () => {
   }, []);
 
   if (loading) {
-    return <Loading></Loading>;
+    return <Loading />;
   }
   return (
     <Container>
@@ -44,7 +44,7 @@ const Mover: React.FC = () => {
           <Subtitle>Selecione as crianças que vão se mover:</Subtitle>
           <Select
             mode="multiple"
-            style={{ width: "100%" }}
+            style={{ width: '100%' }}
             placeholder="Selecione as Crianças que deseja mover"
             onChange={handleChange}
             optionLabelProp="label"
@@ -59,9 +59,9 @@ const Mover: React.FC = () => {
           </Select>
           <Subtitle>Destino:</Subtitle>
           <Select
-            style={{ width: "100%" }}
+            style={{ width: '100%' }}
             placeholder="Local destino"
-            onChange={(e) => setPara(e)}
+            onChange={e => setPara(e)}
             optionLabelProp="label"
           >
             <Option value="COMIN" label="COMIN (Maiores)">

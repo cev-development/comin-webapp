@@ -1,14 +1,14 @@
 /* eslint-disable no-console */
-import { Dispatch } from "redux";
-import jwt from "jsonwebtoken";
-import SessionService from "../../../service/authService";
+import { Dispatch } from 'redux';
+import jwt from 'jsonwebtoken';
+import SessionService from '../../../service/authService';
 import {
   LOAD_SUCCESS,
   LOAD_FAILURE,
   LOAD_LOGOUT,
   IPropsAuthRequest,
-} from "./types";
-import api from "../../../service/api";
+} from './types';
+import api from '../../../service/api';
 
 interface IResult {
   account: {
@@ -34,14 +34,14 @@ const authRequest =
         account: {
           firstName: request.user.first_name,
           lastName: request?.user.last_name,
-          email: base.email || "",
+          email: base.email || '',
           photo: false,
           id: token?.sub,
         },
       };
 
-      sessionStorage.setItem("token", JSON.stringify(result));
-      sessionStorage.setItem("accessToken", request.token);
+      sessionStorage.setItem('token', JSON.stringify(result));
+      sessionStorage.setItem('accessToken', request.token);
 
       return dispatch({
         type: LOAD_SUCCESS,
@@ -53,7 +53,7 @@ const authRequest =
     } catch (e) {
       return dispatch({
         type: LOAD_FAILURE,
-        payload: "",
+        payload: '',
       });
     }
   };

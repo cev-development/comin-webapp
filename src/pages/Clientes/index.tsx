@@ -1,7 +1,7 @@
-import { useEffect, useState } from "react";
-import { useHistory } from "react-router-dom";
-import { Header, Loading, TablePage, Input } from "../../components";
-import authService from "../../service/authService";
+import { useEffect, useState } from 'react';
+import { useHistory } from 'react-router-dom';
+import { Header, Loading, TablePage, Input } from '../../components';
+import authService from '../../service/authService';
 import {
   Button,
   Container,
@@ -9,7 +9,7 @@ import {
   Content,
   HeaderContent,
   Title,
-} from "./style";
+} from './style';
 
 const Clientes: React.FC = () => {
   const [dataSource, setDataSource] = useState([]);
@@ -20,29 +20,29 @@ const Clientes: React.FC = () => {
 
   const columns = [
     {
-      title: "Nome",
-      dataIndex: "nome",
-      key: "nome",
+      title: 'Nome',
+      dataIndex: 'nome',
+      key: 'nome',
     },
     {
-      title: "Idade",
-      dataIndex: "idade",
-      key: "idade",
+      title: 'Idade',
+      dataIndex: 'idade',
+      key: 'idade',
     },
     {
-      title: "Localização",
-      dataIndex: "local",
-      key: "local",
+      title: 'Localização',
+      dataIndex: 'local',
+      key: 'local',
     },
     {
-      title: "Responsavel",
-      dataIndex: "responsavel",
-      key: "responsavel",
+      title: 'Responsavel',
+      dataIndex: 'responsavel',
+      key: 'responsavel',
     },
     {
-      title: "Contato",
-      dataIndex: "contato",
-      key: "contato",
+      title: 'Contato',
+      dataIndex: 'contato',
+      key: 'contato',
     },
   ];
 
@@ -57,7 +57,7 @@ const Clientes: React.FC = () => {
   }, []);
 
   if (loading) {
-    return <Loading></Loading>;
+    return <Loading />;
   }
   return (
     <>
@@ -67,21 +67,21 @@ const Clientes: React.FC = () => {
           <HeaderContent>
             <Title>Crianças</Title>
             <div>
-              <Button onClick={() => history.push("/registrar")}>
+              <Button onClick={() => history.push('/registrar')}>
                 + Cadastar Crianças
               </Button>
               <Input
                 placeholder="Pesquisar"
-                onChange={(e) => {
+                onChange={e => {
                   clearTimeout(typingTimer);
                   if (e.target.value) {
                     setTypingTimer(
                       setTimeout(async () => {
                         const response = await authService.getKids(
-                          e.target.value
+                          e.target.value,
                         );
                         setDataSource(response);
-                      }, 1000)
+                      }, 1000),
                     );
                   }
                 }}

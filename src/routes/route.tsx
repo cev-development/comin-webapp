@@ -1,10 +1,10 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable react/jsx-props-no-spreading */
-import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { Route, Redirect, RouteProps } from "react-router-dom";
-import { Loading } from "../components";
-import { loadToken } from "../store/modules/auth/actions";
+import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { Route, Redirect, RouteProps } from 'react-router-dom';
+import { Loading } from '../components';
+import { loadToken } from '../store/modules/auth/actions';
 
 interface IProps extends RouteProps {
   isPrivate?: boolean;
@@ -20,8 +20,8 @@ const RouteWrapper: React.FC<IProps> = ({
   const dispatch = useDispatch();
   const [loading, setLoading] = useState(true);
 
-  const result = sessionStorage.getItem("token");
-  const token = sessionStorage.getItem("accessToken");
+  const result = sessionStorage.getItem('token');
+  const token = sessionStorage.getItem('accessToken');
   useEffect(() => {
     const load = async () => {
       setLoading(true);
@@ -39,14 +39,14 @@ const RouteWrapper: React.FC<IProps> = ({
   }
 
   if (result) {
-    return <Route {...rest} render={(props) => <Component {...props} />} />;
+    return <Route {...rest} render={props => <Component {...props} />} />;
   }
 
   if (!isLogged && isPrivate) {
     return <Redirect to="/" />;
   }
 
-  return <Route {...rest} render={(props) => <Component {...props} />} />;
+  return <Route {...rest} render={props => <Component {...props} />} />;
 };
 
 RouteWrapper.defaultProps = {

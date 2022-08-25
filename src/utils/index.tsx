@@ -5,7 +5,7 @@ interface IPropsInput {
   error: string;
 }
 
-const defaultInput = { value: "", error: "", isValid: true };
+const defaultInput = { value: '', error: '', isValid: true };
 const requiredTrue = { ...defaultInput, required: true };
 
 const initialInputValue = {
@@ -14,7 +14,7 @@ const initialInputValue = {
 };
 
 export const isEmpty = (item: string | Object): Boolean => {
-  if (typeof item === "string") {
+  if (typeof item === 'string') {
     return item.trim().length === 0;
   }
 
@@ -33,7 +33,7 @@ export const setInputValue = (value: {
 }): IPropsInput => {
   const initialValue = initialInputValue.required;
 
-  if (typeof value === "object") {
+  if (typeof value === 'object') {
     return { ...initialValue, ...value };
   }
 
@@ -52,7 +52,7 @@ export const validateForm = (state: {
     if (isEmpty(value) && required) {
       inputsWithError[key] = setInputValue({
         value,
-        error: "Campo obrigatório",
+        error: 'Campo obrigatório',
       });
     }
   });

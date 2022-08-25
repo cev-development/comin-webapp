@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const Container = styled.div`
   width: 100%;
@@ -28,7 +28,7 @@ export const Title = styled.div`
   }
 `;
 
-export const ButtonTable = styled("button")<{ select: boolean }>`
+export const ButtonTable = styled('button')<{ select: boolean }>`
   padding: 10px 20px;
   margin: 0px 10px;
   border-radius: 5px 5px 0px 0px;

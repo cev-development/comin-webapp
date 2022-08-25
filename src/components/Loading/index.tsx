@@ -1,4 +1,4 @@
-import { Container, LoadingCircle } from "./styles";
+import { Container, LoadingCircle } from './styles';
 
 const Loading: React.FC = () => {
   return (

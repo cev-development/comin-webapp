@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react";
-import { Header, Loading, TablePage } from "../../components";
-import authService from "../../service/authService";
+import { useEffect, useState } from 'react';
+import { Header, Loading, TablePage } from '../../components';
+import authService from '../../service/authService';
 import {
   ButtonTable,
   Container,
@@ -8,7 +8,7 @@ import {
   Content,
   HeaderTable,
   Title,
-} from "./style";
+} from './style';
 
 const Localizacao: React.FC = () => {
   const [locale, setLocale] = useState({
@@ -21,31 +21,31 @@ const Localizacao: React.FC = () => {
 
   const columns = [
     {
-      title: "Nome",
-      dataIndex: "nome",
-      key: "nome",
+      title: 'Nome',
+      dataIndex: 'nome',
+      key: 'nome',
     },
     {
-      title: "Idade",
-      dataIndex: "idade",
-      key: "idade",
+      title: 'Idade',
+      dataIndex: 'idade',
+      key: 'idade',
     },
     {
-      title: "Responsavel",
-      dataIndex: "responsavel",
-      key: "responsavel",
+      title: 'Responsavel',
+      dataIndex: 'responsavel',
+      key: 'responsavel',
     },
     {
-      title: "Contato",
-      dataIndex: "contato",
-      key: "contato",
+      title: 'Contato',
+      dataIndex: 'contato',
+      key: 'contato',
     },
   ];
 
   useEffect(() => {
     const load = async () => {
       setLoading(true);
-      const response = await authService.getKidsForLocal("comin");
+      const response = await authService.getKidsForLocal('comin');
       setDataSource(response);
       setLoading(false);
     };
@@ -53,7 +53,7 @@ const Localizacao: React.FC = () => {
   }, [locale]);
 
   if (loading) {
-    return <Loading></Loading>;
+    return <Loading />;
   }
   return (
     <Container>
