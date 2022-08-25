@@ -1,4 +1,4 @@
-name: Deploy
+name: Deploy Production
 
 on:
   push:
@@ -12,6 +12,6 @@ jobs:
       - uses: actions/checkout@v2
       - uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
         with:
-          heroku_api_key: 'c1347096-b33a-4d9e-bb42-128c9179c4c4'
-          heroku_app_name: 'bom-job-client' #Must be unique in Heroku
-          heroku_email: 'bomjob.heroku@gmail.com'
+          heroku_api_key: "761aa6dd-3a25-40e1-bbd4-18e270e861ed"
+          heroku_app_name: "comin-webapp" #Must be unique in Heroku
+          heroku_email: "system.comin@gmail.com"
