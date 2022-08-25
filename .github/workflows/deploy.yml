@@ -1,0 +1,17 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
+        with:
+          heroku_api_key: 'c1347096-b33a-4d9e-bb42-128c9179c4c4'
+          heroku_app_name: 'bom-job-client' #Must be unique in Heroku
+          heroku_email: 'bomjob.heroku@gmail.com'
