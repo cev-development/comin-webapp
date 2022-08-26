@@ -87,13 +87,13 @@ const Mover: React.FC = () => {
             <Option value="comin" label="COMIN (Maiores)">
               COMIN (Maiores)
             </Option>
-            <Option value="cominIN" label="COMIN (Menores)">
+            <Option value="cominIn" label="COMIN (Menores)">
               COMIN (Menores)
             </Option>
-            <Option value="restroom" label="Banheiro">
+            <Option value="banheiro" label="Banheiro">
               Banheiro
             </Option>
-            <Option value="home" label="Casa">
+            <Option value="casa" label="Casa">
               Casa
             </Option>
           </Select>
