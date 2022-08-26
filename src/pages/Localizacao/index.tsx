@@ -24,22 +24,22 @@ const Localizacao: React.FC = () => {
   const columns = [
     {
       title: 'Nome',
-      dataIndex: 'nome',
+      dataIndex: 'name',
       key: 'nome',
     },
     {
       title: 'Idade',
-      dataIndex: 'idade',
+      dataIndex: 'age',
       key: 'idade',
     },
     {
       title: 'Responsavel',
-      dataIndex: 'responsavel',
+      dataIndex: 'guardian',
       key: 'responsavel',
     },
     {
       title: 'Contato',
-      dataIndex: 'contato',
+      dataIndex: 'contact',
       key: 'contato',
     },
   ];
