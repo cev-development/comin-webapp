@@ -7,6 +7,10 @@ export const Container = styled.div`
   flex-direction: column;
   /* justify-content: center; */
   background-color: #fff;
+
+  @media (max-width: '540px') {
+    flex-direction: column-reverse;
+  }
 `;
 
 export const Content = styled.main`

@@ -1,4 +1,6 @@
 import { Select } from 'antd';
+import { useHistory } from 'react-router-dom';
+
 import { useEffect, useState } from 'react';
 import { Header, Loading } from '../../components';
 import authService from '../../service/authService';
@@ -12,6 +14,8 @@ import {
 } from './style';
 
 const Mover: React.FC = () => {
+  const history = useHistory();
+
   const [dataSource, setDataSource] = useState<any>([]);
   const [select, setSelect] = useState<any>([]);
   const [loading, setLoading] = useState(true);
@@ -35,6 +39,17 @@ const Mover: React.FC = () => {
   if (loading) {
     return <Loading />;
   }
+
+  const toUpdate = async () => {
+    console.log('toUpdate', select, para);
+
+    await authService.move(select, para);
+
+    alert('Crianças foram movidas com sucesso');
+
+    history.push('/criancas');
+  };
+
   return (
     <Container>
       <Header />
@@ -51,8 +66,9 @@ const Mover: React.FC = () => {
           >
             {dataSource.map((element: any) => {
               return (
-                <Option value={element.id} label={element.nome}>
-                  {element.nome}
+                // eslint-disable-next-line no-underscore-dangle
+                <Option value={element._id} label={element.name}>
+                  {element.name}
                 </Option>
               );
             })}
@@ -61,20 +77,25 @@ const Mover: React.FC = () => {
           <Select
             style={{ width: '100%' }}
             placeholder="Local destino"
-            onChange={e => setPara(e)}
+            onChange={e => {
+              setPara(e);
+            }}
             optionLabelProp="label"
           >
-            <Option value="COMIN" label="COMIN (Maiores)">
+            <Option value="comin" label="COMIN (Maiores)">
               COMIN (Maiores)
             </Option>
-            <Option value="Banheiro" label="Banheiro">
+            <Option value="comin" label="COMIN (Menores)">
+              COMIN (Menores)
+            </Option>
+            <Option value="restroom" label="Banheiro">
               Banheiro
             </Option>
-            <Option value="Casa" label="Casa">
+            <Option value="home" label="Casa">
               Casa
             </Option>
           </Select>
-          <Button>Enviar</Button>
+          <Button onClick={toUpdate}>Enviar</Button>
         </ContentForm>
       </Content>
     </Container>

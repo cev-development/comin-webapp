@@ -1,4 +1,8 @@
 import { useState } from 'react';
+import { useHistory } from 'react-router-dom';
+
+import authService from '~/service/authService';
+
 import { Header, Input } from '../../components';
 import { generateRequiredInputValues } from '../../utils';
 import {
@@ -23,6 +27,8 @@ type typeInput = {
 };
 
 const Registration: React.FC = () => {
+  const history = useHistory();
+
   const stateSchema = {
     ...generateRequiredInputValues(['name', 'guardian', 'contact', 'age']),
   };
@@ -47,6 +53,19 @@ const Registration: React.FC = () => {
         error,
       },
     }));
+  };
+
+  const toSave = async () => {
+    await authService.create({
+      name: inputValue.name.value,
+      age: parseInt(inputValue.age.value, 10),
+      guardian: inputValue.guardian.value,
+      contact: inputValue.contact.value,
+    });
+
+    alert('Criança criada com sucesso');
+
+    history.push('/criancas');
   };
 
   return (
@@ -87,7 +106,7 @@ const Registration: React.FC = () => {
           <ErroAlert erro={!!inputValue.contact.error}>
             {inputValue.contact.error}
           </ErroAlert>
-          <Button>Salvar</Button>
+          <Button onClick={toSave}>Salvar</Button>
         </Main>
       </Content>
     </Container>

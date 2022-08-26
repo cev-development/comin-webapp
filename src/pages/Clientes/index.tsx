@@ -21,27 +21,27 @@ const Clientes: React.FC = () => {
   const columns = [
     {
       title: 'Nome',
-      dataIndex: 'nome',
+      dataIndex: 'name',
       key: 'nome',
     },
     {
       title: 'Idade',
-      dataIndex: 'idade',
+      dataIndex: 'age',
       key: 'idade',
     },
     {
       title: 'Localização',
-      dataIndex: 'local',
+      dataIndex: 'place',
       key: 'local',
     },
     {
       title: 'Responsavel',
-      dataIndex: 'responsavel',
+      dataIndex: 'guardian',
       key: 'responsavel',
     },
     {
       title: 'Contato',
-      dataIndex: 'contato',
+      dataIndex: 'contact',
       key: 'contato',
     },
   ];
@@ -81,8 +81,13 @@ const Clientes: React.FC = () => {
                           e.target.value,
                         );
                         setDataSource(response);
-                      }, 1000),
+                      }, 300),
                     );
+                  } else {
+                    setTimeout(async () => {
+                      const response = await authService.getKids();
+                      setDataSource(response);
+                    }, 50);
                   }
                 }}
               />
