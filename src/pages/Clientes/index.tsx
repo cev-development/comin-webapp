@@ -87,7 +87,7 @@ const Clientes: React.FC = () => {
                     setTimeout(async () => {
                       const response = await authService.getKids();
                       setDataSource(response);
-                    }, 50);
+                    }, 200);
                   }
                 }}
               />

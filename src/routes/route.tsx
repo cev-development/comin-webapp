@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Route, Redirect, RouteProps } from 'react-router-dom';
+import api from '~/service/api';
 import { Loading } from '../components';
 import { loadToken } from '../store/modules/auth/actions';
 
@@ -26,8 +27,8 @@ const RouteWrapper: React.FC<IProps> = ({
     const load = async () => {
       setLoading(true);
       if (result && token) {
-        // api.defaults.headers.common.Authorization = `Bearer ${token}`;
-        // dispatch(loadToken(JSON.parse(result)));s
+        api.defaults.headers.common.Authorization = `Bearer ${token}`;
+        dispatch(loadToken(JSON.parse(result)));
       }
       setLoading(false);
     };

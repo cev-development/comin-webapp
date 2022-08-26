@@ -18,6 +18,7 @@ export const Content = styled.main`
   min-width: 250px;
   max-width: 450px;
   height: 60%;
+  min-height: 350px;
   /* padding: 30px 25px; */
   border-radius: 5px;
   -webkit-box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.1);

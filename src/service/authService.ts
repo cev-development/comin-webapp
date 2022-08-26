@@ -22,7 +22,7 @@ class SessionService {
     return response.data;
   }
 
-  async getKidsForLocal(local: string): Promise<any> {
+  async getKidsForLocal(local: any): Promise<any> {
     const response = await api.get(`/child/place/${local}`);
 
     return response.data;

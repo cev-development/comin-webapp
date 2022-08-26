@@ -15,14 +15,17 @@ export const Container = styled.div`
 
 export const LoadingCircle = styled.i`
   animation: linear rotation 2s infinite;
-  svg,
-  img {
-    height: 10vh;
-    width: auto;
-  }
+  border-top: 3px solid #b1e7fb;
+  width: 15vh;
+  height: 15vh;
+  border-radius: 50%;
   @keyframes rotation {
     to {
       transform: rotate(1turn);
     }
   }
+`;
+export const Title = styled.b`
+  position: absolute;
+  font-size: 1vh;
 `;

@@ -22,8 +22,8 @@ const Mover: React.FC = () => {
   const [para, setPara] = useState('');
   const { Option } = Select;
 
-  const handleChange = (value: number[]) => {
-    setSelect(value);
+  const handleChange = (value: null, label: any[]) => {
+    setSelect(label.map(e => e.key));
   };
 
   useEffect(() => {
@@ -41,8 +41,6 @@ const Mover: React.FC = () => {
   }
 
   const toUpdate = async () => {
-    console.log('toUpdate', select, para);
-
     await authService.move(select, para);
 
     alert('Crianças foram movidas com sucesso');
@@ -66,8 +64,12 @@ const Mover: React.FC = () => {
           >
             {dataSource.map((element: any) => {
               return (
-                // eslint-disable-next-line no-underscore-dangle
-                <Option value={element._id} label={element.name}>
+                <Option
+                  // eslint-disable-next-line no-underscore-dangle
+                  key={element._id}
+                  value={element.name}
+                  label={element.name}
+                >
                   {element.name}
                 </Option>
               );
@@ -85,7 +87,7 @@ const Mover: React.FC = () => {
             <Option value="comin" label="COMIN (Maiores)">
               COMIN (Maiores)
             </Option>
-            <Option value="comin" label="COMIN (Menores)">
+            <Option value="cominIN" label="COMIN (Menores)">
               COMIN (Menores)
             </Option>
             <Option value="restroom" label="Banheiro">

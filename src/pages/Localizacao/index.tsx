@@ -13,7 +13,9 @@ import {
 const Localizacao: React.FC = () => {
   const [locale, setLocale] = useState({
     comin: true,
+    cominIn: false,
     banheiro: false,
+    casa: false,
   });
 
   const [dataSource, setDataSource] = useState([]);
@@ -42,10 +44,25 @@ const Localizacao: React.FC = () => {
     },
   ];
 
+  const switchLocal = (): string => {
+    switch (true) {
+      case locale.comin:
+        return 'comin';
+      case locale.cominIn:
+        return 'cominIn';
+      case locale.banheiro:
+        return 'banheiro';
+      case locale.casa:
+        return 'casa';
+      default:
+        return 'comin';
+    }
+  };
+
   useEffect(() => {
     const load = async () => {
       setLoading(true);
-      const response = await authService.getKidsForLocal('comin');
+      const response = await authService.getKidsForLocal(switchLocal());
       setDataSource(response);
       setLoading(false);
     };
@@ -63,19 +80,53 @@ const Localizacao: React.FC = () => {
         <HeaderTable>
           <ButtonTable
             select={locale.comin}
-            onClick={() => setLocale({ comin: true, banheiro: false })}
+            onClick={() =>
+              setLocale({
+                comin: true,
+                cominIn: false,
+                banheiro: false,
+                casa: false,
+              })
+            }
           >
-            COMIN
+            COMIN Maiores
+          </ButtonTable>
+          <ButtonTable
+            select={locale.cominIn}
+            onClick={() =>
+              setLocale({
+                comin: false,
+                cominIn: true,
+                banheiro: false,
+                casa: false,
+              })
+            }
+          >
+            COMIN Menores
           </ButtonTable>
           <ButtonTable
             select={locale.banheiro}
-            onClick={() => setLocale({ comin: false, banheiro: true })}
+            onClick={() =>
+              setLocale({
+                comin: false,
+                cominIn: false,
+                banheiro: true,
+                casa: false,
+              })
+            }
           >
             Banheiro
           </ButtonTable>
           <ButtonTable
-            select={locale.banheiro}
-            onClick={() => setLocale({ comin: false, banheiro: true })}
+            select={locale.casa}
+            onClick={() =>
+              setLocale({
+                comin: false,
+                cominIn: false,
+                banheiro: false,
+                casa: true,
+              })
+            }
           >
             Casa
           </ButtonTable>
