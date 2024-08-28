@@ -17,7 +17,8 @@ const RouteWrapper: React.FC<IProps> = ({
   isPrivate,
   ...rest
 }) => {
-  const isLogged = useSelector((state: any) => state.auth.isLogged);
+  const isLogged = true;
+  //  useSelector((state: any) => state.auth.isLogged);
   const dispatch = useDispatch();
   const [loading, setLoading] = useState(true);
 

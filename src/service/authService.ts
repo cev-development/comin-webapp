@@ -10,6 +10,11 @@ interface ICreate {
   age: number;
   guardian: string;
   contact: string;
+  pcd: string;
+  sensitivity: string;
+  literacy: string;
+  learningDisorder: string;
+  escort: string;
 }
 
 class SessionService {
@@ -46,12 +51,27 @@ class SessionService {
     return response.data;
   }
 
-  async create({ name, age, guardian, contact }: ICreate): Promise<any> {
+  async create({
+    name,
+    age,
+    guardian,
+    contact,
+    pcd,
+    sensitivity,
+    literacy,
+    learningDisorder,
+    escort,
+  }: ICreate): Promise<any> {
     const response = await api.post(`/child`, {
       name,
       age,
       guardian,
       contact,
+      pcd,
+      sensitivity,
+      literacy,
+      learningDisorder,
+      escort,
     });
 
     return response.data;
