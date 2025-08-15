@@ -97,7 +97,7 @@ const Localizacao: React.FC = () => {
               })
             }
           >
-            COMIN Maiores
+            BERÇARIO
           </ButtonTable>
           <ButtonTable
             select={locale.PEQUENOS_MISSIONARIOS}
@@ -112,7 +112,7 @@ const Localizacao: React.FC = () => {
               })
             }
           >
-            COMIN Menores
+            PEQUENOS
           </ButtonTable>
           <ButtonTable
             select={locale.DESBRAVADORES_MISSIONARIOS}
@@ -127,7 +127,7 @@ const Localizacao: React.FC = () => {
               })
             }
           >
-            Banheiro
+            DESBRAVADORES
           </ButtonTable>
           <ButtonTable
             select={locale.GTEEN}
@@ -139,6 +139,36 @@ const Localizacao: React.FC = () => {
                 GTEEN: true,
                 BANHEIRO: false,
                 CASA: false,
+              })
+            }
+          >
+            GTEEN
+          </ButtonTable>
+          <ButtonTable
+            select={locale.DESBRAVADORES_MISSIONARIOS}
+            onClick={() =>
+              setLocale({
+                BERCARIO_MISSIONARIO: false,
+                PEQUENOS_MISSIONARIOS: false,
+                DESBRAVADORES_MISSIONARIOS: false,
+                GTEEN: false,
+                BANHEIRO: true,
+                CASA: false,
+              })
+            }
+          >
+            Banheiro
+          </ButtonTable>
+          <ButtonTable
+            select={locale.GTEEN}
+            onClick={() =>
+              setLocale({
+                BERCARIO_MISSIONARIO: false,
+                PEQUENOS_MISSIONARIOS: false,
+                DESBRAVADORES_MISSIONARIOS: false,
+                GTEEN: false,
+                BANHEIRO: false,
+                CASA: true,
               })
             }
           >
