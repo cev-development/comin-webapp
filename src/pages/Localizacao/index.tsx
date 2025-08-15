@@ -145,7 +145,7 @@ const Localizacao: React.FC = () => {
             GTEEN
           </ButtonTable>
           <ButtonTable
-            select={locale.DESBRAVADORES_MISSIONARIOS}
+            select={locale.BANHEIRO}
             onClick={() =>
               setLocale({
                 BERCARIO_MISSIONARIO: false,
@@ -160,7 +160,7 @@ const Localizacao: React.FC = () => {
             Banheiro
           </ButtonTable>
           <ButtonTable
-            select={locale.GTEEN}
+            select={locale.CASA}
             onClick={() =>
               setLocale({
                 BERCARIO_MISSIONARIO: false,
