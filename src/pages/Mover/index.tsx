@@ -79,21 +79,27 @@ const Mover: React.FC = () => {
           <Select
             style={{ width: '100%' }}
             placeholder="Local destino"
-            onChange={e => {
+            onChange={(e: any) => {
               setPara(e);
             }}
             optionLabelProp="label"
           >
-            <Option value="comin" label="COMIN (Maiores)">
-              COMIN (Maiores)
+            <Option value="BERCARIO_MISSIONARIO" label="COMIN (Maiores)">
+              Berçario Missionário
             </Option>
-            <Option value="cominIn" label="COMIN (Menores)">
-              COMIN (Menores)
+            <Option value="PEQUENOS_MISSIONARIOS" label="COMIN (Menores)">
+              Pequenos Missionários
             </Option>
-            <Option value="banheiro" label="Banheiro">
+            <Option value="DESBRAVADORES_MISSIONARIOS" label="COMIN (Menores)">
+              Desbravadores Missionários
+            </Option>
+            <Option value="GTEEN" label="COMIN (Menores)">
+              GTEEN
+            </Option>
+            <Option value="BANHEIRO" label="Banheiro">
               Banheiro
             </Option>
-            <Option value="casa" label="Casa">
+            <Option value="CASA" label="Casa">
               Casa
             </Option>
           </Select>

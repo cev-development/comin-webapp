@@ -12,10 +12,12 @@ import {
 
 const Localizacao: React.FC = () => {
   const [locale, setLocale] = useState({
-    comin: true,
-    cominIn: false,
-    banheiro: false,
-    casa: false,
+    BERCARIO_MISSIONARIO: true,
+    PEQUENOS_MISSIONARIOS: false,
+    DESBRAVADORES_MISSIONARIOS: false,
+    GTEEN: false,
+    BANHEIRO: false,
+    CASA: false,
   });
 
   const [dataSource, setDataSource] = useState([]);
@@ -46,16 +48,20 @@ const Localizacao: React.FC = () => {
 
   const switchLocal = (): string => {
     switch (true) {
-      case locale.comin:
-        return 'comin';
-      case locale.cominIn:
-        return 'cominIn';
-      case locale.banheiro:
-        return 'banheiro';
-      case locale.casa:
-        return 'casa';
+      case locale.BERCARIO_MISSIONARIO:
+        return 'BERCARIO_MISSIONARIO';
+      case locale.PEQUENOS_MISSIONARIOS:
+        return 'PEQUENOS_MISSIONARIOS';
+      case locale.DESBRAVADORES_MISSIONARIOS:
+        return 'DESBRAVADORES_MISSIONARIOS';
+      case locale.GTEEN:
+        return 'GTEEN';
+      case locale.BANHEIRO:
+        return 'BANHEIRO';
+      case locale.CASA:
+        return 'CASA';
       default:
-        return 'comin';
+        return 'DESBRAVADORES_MISSIONARIOS';
     }
   };
 
@@ -79,52 +85,60 @@ const Localizacao: React.FC = () => {
         <Title>Localização</Title>
         <HeaderTable>
           <ButtonTable
-            select={locale.comin}
+            select={locale.BERCARIO_MISSIONARIO}
             onClick={() =>
               setLocale({
-                comin: true,
-                cominIn: false,
-                banheiro: false,
-                casa: false,
+                BERCARIO_MISSIONARIO: true,
+                PEQUENOS_MISSIONARIOS: false,
+                DESBRAVADORES_MISSIONARIOS: false,
+                GTEEN: false,
+                BANHEIRO: false,
+                CASA: false,
               })
             }
           >
             COMIN Maiores
           </ButtonTable>
           <ButtonTable
-            select={locale.cominIn}
+            select={locale.PEQUENOS_MISSIONARIOS}
             onClick={() =>
               setLocale({
-                comin: false,
-                cominIn: true,
-                banheiro: false,
-                casa: false,
+                BERCARIO_MISSIONARIO: false,
+                PEQUENOS_MISSIONARIOS: true,
+                DESBRAVADORES_MISSIONARIOS: false,
+                GTEEN: false,
+                BANHEIRO: false,
+                CASA: false,
               })
             }
           >
             COMIN Menores
           </ButtonTable>
           <ButtonTable
-            select={locale.banheiro}
+            select={locale.DESBRAVADORES_MISSIONARIOS}
             onClick={() =>
               setLocale({
-                comin: false,
-                cominIn: false,
-                banheiro: true,
-                casa: false,
+                BERCARIO_MISSIONARIO: false,
+                PEQUENOS_MISSIONARIOS: false,
+                DESBRAVADORES_MISSIONARIOS: true,
+                GTEEN: false,
+                BANHEIRO: false,
+                CASA: false,
               })
             }
           >
             Banheiro
           </ButtonTable>
           <ButtonTable
-            select={locale.casa}
+            select={locale.GTEEN}
             onClick={() =>
               setLocale({
-                comin: false,
-                cominIn: false,
-                banheiro: false,
-                casa: true,
+                BERCARIO_MISSIONARIO: false,
+                PEQUENOS_MISSIONARIOS: false,
+                DESBRAVADORES_MISSIONARIOS: false,
+                GTEEN: true,
+                BANHEIRO: false,
+                CASA: false,
               })
             }
           >
